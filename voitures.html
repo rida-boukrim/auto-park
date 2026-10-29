@@ -51,7 +51,7 @@
           >
         </div>
         <!-- TODO JS : gérer submit, valider, ajouter ou modifier une voiture. -->
-        <form id="formulaire-voiture" novalidate>
+        <form id="formulaire-voiture" >
           <input type="hidden" id="voiture-id" name="id" value="" />
           <div class="form-grid">
             <div class="field">
@@ -217,7 +217,7 @@
           <div class="field">
             <label for="tri-prix">Trier par</label>
             <select id="tri-prix">
-              <option value="">Ordre initial</option>
+              <option value="initial">Ordre initial</option>
               <option value="croissant">Prix croissant</option>
               <option value="decroissant">Prix décroissant</option>
             </select>
@@ -462,6 +462,5 @@
       <span>AutoPark</span>
       <p>Une gestion simple, un parc bien organisé.</p>
     </footer>
-    <script src="js/voitures.js"></script>
   </body>
 </html>
