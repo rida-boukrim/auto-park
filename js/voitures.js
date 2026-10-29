@@ -129,6 +129,7 @@ button2.addEventListener("click", (event) => {
             (item) => item.id !== voiture.id
         )
         afficher(voituresInitiales)
+        form.reset()
     }
 
 })
