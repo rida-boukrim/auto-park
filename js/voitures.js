@@ -34,6 +34,7 @@ const prixError = document.getElementById("erreur-prix-jour");
 prixError.className = "field-error";
 const statusError  = document.getElementById("erreur-statut");
 statusError.className = "field-error";
+const vide = document.getElementById("etat-vide")
 
 
 
@@ -128,7 +129,9 @@ button2.addEventListener("click", (event) => {
             (item) => item.id !== voiture.id
         )
         afficher(voituresInitiales)
+        form.reset()
     }
+
 })
 
 
@@ -141,6 +144,11 @@ tr.append(td1,td2,td3,td4,td5,td6,td7)
 tBody.append(tr)
 
 })
+
+if(voituresInitiales.length == 0){
+    vide.removeAttribute("hidden")
+
+}
 }
 
 // function ajouter 
