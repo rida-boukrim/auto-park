@@ -1,5 +1,4 @@
-// import { voituresInitiales } from "./data.js";
-// let voituresInitiales = voituresInitiales.map((voiture) => ({ ...voiture }));
+
 import { voituresInitiales as donneesInitiales } from "./data.js";
 
 let voituresInitiales = donneesInitiales.map((voiture) => ({ ...voiture }));
@@ -15,6 +14,12 @@ const carCategorie = document.getElementById("categorie");
 const carPrix = document.getElementById("prix-jour");
 const carStatus = document.getElementById("statut");
 const form = document.getElementById("formulaire-voiture");
+const selectTriPrix = document.getElementById("tri-prix");
+const filtreStatut = document.getElementById("filtre-statut");
+const filtreCategorie = document.getElementById("filtre-categorie");
+const recherche = document.getElementById("recherche");
+const btnReinitialiser = document.getElementById("reinitialiser-filtres");
+const annulation = document.getElementById("annuler-modification")
 
 // error message
 const brandError = document.getElementById("erreur-marque")
@@ -34,7 +39,7 @@ statusError.className = "field-error";
 
 
 // fonction afficher 
-function afficher () {
+function afficher (voituresInitiales) {
 tBody.replaceChildren();
 
 voituresInitiales.forEach((voiture) => {
@@ -95,6 +100,19 @@ button1.addEventListener("click",(event) => {
     carPrix.value = voiture.prixJour;
     carStatus.value = voiture.statut;
     button.textContent = "Modifier";
+    annulation.removeAttribute("hidden")
+})
+
+// annuler modification
+annulation.addEventListener("click",() => {
+
+    form.reset()
+    button.textContent = "Ajouter la voiture";
+    annulation.setAttribute("hidden","")
+    idModification = null;    
+
+    
+
 })
 
 // supprimer
@@ -109,7 +127,7 @@ button2.addEventListener("click", (event) => {
         voituresInitiales = voituresInitiales.filter(
             (item) => item.id !== voiture.id
         )
-        afficher()
+        afficher(voituresInitiales)
     }
 })
 
@@ -135,6 +153,7 @@ button.addEventListener("click", (event) => {
     const categorieField = carCategorie.value;
     const prixField = carPrix.value;
     const statusField = carStatus.value;
+    annulation.setAttribute("hidden","")
 
     // validation de champ
     let valid = true;
@@ -204,7 +223,10 @@ if (idModification !== null){
         voitureModifier.categorie = categorieField.trim();
         voitureModifier.prixJour = prixField.trim();
         voitureModifier.statut = statusField.trim();
-    }
+            button.textContent = "Ajouter la voiture";
+        
+   idModification = null;
+ }
 }else {
         // noveau voiture
     const nouvell =  {
@@ -214,14 +236,64 @@ if (idModification !== null){
         immatriculation: plateField.trim(),
         categorie: categorieField.trim(),
         prixJour: prixField.trim(),
-        statut: statusField.trim() 
+        statut: statusField.trim(), 
+
     }
     voituresInitiales.push(nouvell)
 }
 
-afficher()
+
+afficher(voituresInitiales)
 form.reset()
 
 
 })
-afficher()
+// filtr a partir status categorie and recherch 
+function afficherVoiturApartir () {
+let copy = [...voituresInitiales];
+
+// filter statut
+
+if(filtreStatut.value !== ""){
+    copy = copy.filter(filtrer => filtrer.statut === filtreStatut.value)
+}
+// filter categorie
+if(filtreCategorie.value !== ""){
+    copy = copy.filter(filtrer => filtrer.categorie === filtreCategorie.value)
+}
+// recherch par
+const recherchText = recherche.value.trim().toLowerCase();
+if(recherchText !== ""){
+    copy = copy.filter(filtrer => 
+        filtrer.marque.toLocaleLowerCase().trim().includes(recherchText)||
+        filtrer.modele.toLocaleLowerCase().trim().includes(recherchText)||
+        filtrer.immatriculation.toLocaleLowerCase().trim().includes(recherchText)
+    )
+}
+
+
+    if (selectTriPrix.value === "decroissant") {
+        copy.sort((a, b) => Number(a.prixJour) - Number(b.prixJour));
+    } else if (selectTriPrix.value === "croissant") {
+        copy.sort((a, b) => Number(b.prixJour) - Number(a.prixJour));
+    }
+
+
+
+afficher(copy)
+}
+selectTriPrix.addEventListener("change",afficherVoiturApartir)
+recherche.addEventListener("input",afficherVoiturApartir)
+filtreCategorie.addEventListener("change",afficherVoiturApartir)
+filtreStatut.addEventListener("change",afficherVoiturApartir)
+// Reinitialiser
+btnReinitialiser.addEventListener("click",() => {
+        filtreStatut.value = "";
+    filtreCategorie.value = "";
+    selectTriPrix.value = "initial";
+    recherche.value = "";
+
+afficher(voituresInitiales)
+})
+
+afficher(voituresInitiales)
