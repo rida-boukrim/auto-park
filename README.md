@@ -1,104 +1,112 @@
 # AutoPark — Starter apprenant
 
-Projet individuel · 5 jours · HTML / CSS / JavaScript Vanilla ES6+
 
-## Ce qui est fourni
+## Présentation du projet
 
-- `voitures.html` : la page **Gestion du parc**, sans images.
-- `css/style.css` : le style complet et responsive.
-- `js/data.js` : six voitures fictives sous forme de tableau d'objets exporté.
-- `js/voitures.js` : point d'entrée JavaScript avec des étapes, sans implémentation.
+![AutoPark Dashboard](./assets/images/readmeimg.png)
 
-Le formulaire, la recherche, les filtres et les boutons sont **statiques**.
-Les six lignes du tableau sont uniquement des exemples HTML. Elles correspondent
-aux données fournies et doivent être remplacées par votre affichage JavaScript.
-Aucune fonctionnalité JavaScript du brief n'est réalisée dans ce starter.
+**AutoPark** est une application web de gestion d'un parc automobile pour une agence de location de voitures appelée **Atlas Auto**.
 
-## Lancer le projet
+L'objectif du projet est de faciliter la gestion des véhicules, de suivre leur disponibilité et de consulter rapidement les informations du parc automobile.
 
-1. Ouvrir le dossier dans VS Code.
-2. Démarrer un serveur local avec Live Server, puis ouvrir `voitures.html`.
-3. Autre possibilité, si Python est installé : `python -m http.server 8000`,
-   puis ouvrir `http://localhost:8000/voitures.html`.
+Le projet est développé avec **HTML, CSS, JavaScript Vanilla et Tailwind CSS**.
 
-Un serveur local est nécessaire pour travailler avec les modules ES6.
-La racine du serveur ne contient pas encore de page `index.html` : ouvrir
-explicitement `voitures.html` au démarrage.
+## Technologies utilisées
 
-## La seconde page est à créer
+- **HTML5** : Structure des pages web.
+- **CSS3** : Mise en forme et design de l'interface.
+- **Tailwind CSS** : Création des interfaces avec des classes utilitaires.
+- **JavaScript Vanilla (ES6 Modules)** : Gestion des données et des interactions dynamiques.
+- **Font Awesome 6** : Icônes de l'interface.
+- **Git & GitHub** : Gestion des versions et du travail avec les branches.
+**Jira** : pour organiser les tach de project
+ ![AutoPark Dashboard](./assets/images/jiraimg.png)
 
-Le lien « Dashboard » pointe vers `index.html`. **Ce fichier n'est pas fourni** :
-c'est votre deuxième mission. Tant que vous ne l'avez pas créé, ce lien ne mène
-pas à une page existante.
+## Fonctionnalités principales
 
-Créer sa structure HTML, son CSS et son JavaScript. Afficher quatre compteurs :
-total, disponibles, louées et en maintenance. Lire les mêmes données que la page
-de gestion. Aucun graphique ni bibliothèque de graphiques n'est nécessaire.
+### 1. Dashboard
 
-## Travail JavaScript à réaliser
+Le Dashboard permet d'avoir une vue globale sur le parc automobile à travers des indicateurs :
 
-1. Importer les données initiales et générer les lignes du tableau.
-2. Ajouter une voiture et valider les champs.
-3. Modifier une voiture via le même formulaire et permettre l'annulation.
-4. Supprimer après confirmation.
-5. Combiner recherche, filtres et tri numérique des prix.
-6. Sauvegarder avec `localStorage` et JSON ; récupérer les données au chargement.
-7. Organiser les responsabilités dans des modules réutilisables.
-8. Réaliser le dashboard et vérifier les données sur les deux pages.
+- Nombre total de voitures.
+- Nombre de voitures disponibles.
+- Nombre de voitures louées.
+- Nombre de voitures en maintenance.
 
-Utiliser les données initiales uniquement en l'absence de sauvegarde. Un tableau
-vide sauvegardé doit rester vide. Les compteurs sont actualisés à l'ouverture
-ou au rechargement du dashboard.
+Les statistiques sont calculées dynamiquement à partir des données des véhicules.
 
-## Repères du HTML
+### 2. Gestion des voitures
 
-| Élément | Sélecteur |
-| --- | --- |
-| Formulaire | `#formulaire-voiture` |
-| Identifiant en cours de modification | `#voiture-id` |
-| Titre du formulaire | `#titre-formulaire` |
-| Marque / modèle | `#marque` / `#modele` |
-| Immatriculation | `#immatriculation` |
-| Catégorie / statut | `#categorie` / `#statut` |
-| Prix | `#prix-jour` |
-| Bouton d'enregistrement | `#bouton-enregistrer` |
-| Annulation de la modification | `#annuler-modification` |
-| Message du formulaire | `#message-formulaire` |
-| Corps du tableau | `#liste-voitures` |
-| Recherche | `#recherche` |
-| Filtres | `#filtre-statut` / `#filtre-categorie` |
-| Tri | `#tri-prix` |
-| Réinitialisation | `#reinitialiser-filtres` |
-| Message de gestion | `#message-parc` |
-| État vide / texte | `#etat-vide` / `#texte-etat-vide` |
+La page Gestion du parc permet de gérer les véhicules à travers plusieurs fonctionnalités :
 
-Les boutons de démonstration portent `data-action="modifier"` ou
-`data-action="supprimer"`, et `data-id` indique l'identifiant de la voiture.
-Conserver ces repères lors de la génération dynamique si vous les utilisez.
+**Ajouter une voiture**
+- Ajouter une nouvelle voiture à l'inventaire.
+- Remplir les informations : marque, modèle, immatriculation, catégorie, prix par jour et statut.
 
-Les éléments de message d'erreur sont déjà placés sous les champs, par exemple
-`#erreur-marque` et `#erreur-prix-jour`. Ajouter `aria-invalid="true"` aux champs
-invalides et le retirer après correction. Le formulaire utilise `novalidate`
-pour vous laisser développer vos propres vérifications JavaScript.
+**Modifier une voiture**
+- Modifier les informations d'une voiture existante.
+- Préremplir le formulaire avec les informations du véhicule sélectionné.
+- Annuler la modification.
 
-Retirer ou remettre l'attribut `hidden` pour contrôler l'état vide et le bouton
-d'annulation. Les classes `success` et `error` peuvent être appliquées aux messages.
+**Supprimer une voiture**
+- Supprimer une voiture de l'inventaire.
+- Demander une confirmation avant la suppression.
 
-Styles de statut disponibles : `.badge-disponible`, `.badge-louee`,
-`.badge-maintenance`, avec la classe commune `.badge`.
+### 3. Validation du formulaire
 
-Le tableau défile horizontalement dans sa propre zone sur les petits écrans.
-Le reste de la page reste adapté à la largeur de l'écran.
+Le formulaire contient plusieurs règles de validation :
 
-## À vérifier avant de rendre
+- Vérifier que tous les champs obligatoires sont remplis.
+- Vérifier l'unicité de l'immatriculation.
+- Afficher des messages d'erreur en cas de saisie incorrecte.
 
-- Ajout valide et refus des champs vides ou composés uniquement d'espaces.
-- Prix positif et immatriculation unique, y compris lors d'une modification.
-- Annulation et confirmation des actions.
-- Recherche, filtres et tri utilisés ensemble.
-- Conservation des données après rechargement, même quand le parc est vide.
-- Exactitude des quatre compteurs et navigation entre les deux pages.
-- Utilisation sur mobile et absence d'erreurs dans la console.
+### 4. Recherche et filtres
 
-Compléter ensuite ce README avec vos choix, les fonctionnalités réalisées,
-l'organisation de vos modules et le lien de déploiement.
+L'application permet de retrouver facilement les véhicules grâce à :
+
+- **Recherche** par marque, modèle ou immatriculation.
+- **Filtrage par statut** : Disponible, Louée ou En maintenance.
+- **Filtrage par catégorie** : Citadine, Berline ou SUV.
+- **Tri par prix** : Prix croissant ou décroissant.
+- **Réinitialisation** de tous les filtres et de la recherche.
+
+### 5. Affichage dynamique
+
+- Affichage des véhicules dans un tableau.
+- Mise à jour automatique du tableau après l'ajout, la modification ou la suppression.
+- Affichage d'un état vide lorsqu'aucun véhicule ne correspond aux résultats.
+
+## Structure du projet
+
+```text
+AutoPark/
+│
+├── assets/
+│
+├── css/
+│   ├── input.css
+│   ├── style.css
+│   └── tailwind.css
+│
+├── js/
+│   ├── data.js
+│   ├── voitures.js
+│   └── scripte.js
+│
+├── index.html
+├── voitures.html
+├── package.json
+├── package-lock.json
+└── .gitignore
+```
+
+## Gestion des branches Git
+
+Le projet utilise plusieurs branches pour organiser le développement :
+
+| Branche | Rôle |
+|---|---|
+| `main` | Version principale et stable du projet. |
+| `develop` | Branche de développement et d'intégration des fonctionnalités. |
+| `feat/dashboard` | Développement de l'interface Dashboard et des statistiques. |
+| `feat/formulair` | Développement du formulaire de gestion des voitures. |
