@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="./css/tailwind.css"> -->
+  </head>
+  <body class="bg-[#f4f6fa]">
+    <header>
+      <nav class="bg-white  lg:flex justify-between pb-5 sm:flex ">
+        <div class="flex gap-3 lg:ml-20 mt-5 sm:ml-9">
+          <span
+            class="text-white flex justify-center items-center text-4xl bg-blue-800 p-3 mt-2 ml-1.5 w-11 h-11 rounded-xl"
+            >A <span class="">.</span></span
+          >
+          <div class="">
+            <span class="mt-5px font-extrabold text-2xl">AutoPark</span>
+            <p class="text-gray-500 text-sm">ATLAS AUTO</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5 mt-5  justify-between  pb-2.5 lg:mt-5 sm:mt-5">
+          <a
+            class="ml-2.5 mt-1.5 bg-[#ecf1ff] text-blue-600 rounded-lg px-6 h-9 flex justify-center items-center"
+            href="index.html"
+            >Dashboard</a
+          >
+          <a class="mr-2.5 p-3 text-[#627184]" href="voitures.html "
+            >Gestion de Park</a
+          >
+        </div>
+        <p class="hidden lg:block lg:mt-7">Agence de location</p>
+      </nav>
+    </header>
+    <main>
+      <div class="grid grid-cols-1  sm:grid-cols-2  lg:grid-cols-4  ">
+<article class="bg-white flex justify-center items-center mt-3.5 mr-6 ml-6 rounded-lg">
+        <div class="mr">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mx-6"
+          >
+            <i class="fa-solid fa-car text-blue-600 text-2xl"></i>
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="text-xl mt-0.5 mb-1.5 flex justify-center items-center">Totale</p>
+          <p class="flex justify-center text-xl mb-2.5" id="total"></p>
+        </div>
+      </article>
+      <article class="bg-white flex justify-center items-center mt-3.5 mr-6 ml-6 rounded-lg">
+        <div>
+          <div
+            class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center   mx-6"
+          >
+            <i class="fa-solid fa-circle-check text-green-600 text-2xl"></i>
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="text-xl mt-0.5 mb-1.5 flex justify-center items-center">
+            Disponible
+          </p>
+          <p class="flex justify-center text-xl mb-2.5" id="disponible"></p>
+        </div>
+      </article>
+      <article class="bg-white flex justify-center items-center mt-3.5 mr-6 ml-6 rounded-lg">
+        <div class="ml-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mt-2"
+          >
+            <i class="fa-solid fa-key text-amber-600 text-2xl"></i>
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="text-xl mt-0.5 mb-1.5 flex justify-center items-center">
+            Louee
+          </p>
+          <p class="flex justify-center text-xl mb-2.5" id="louée"></p>
+        </div>
+      </article>
+      <article class="bg-white flex justify-center items-center mt-3.5 mr-6 ml-6 rounded-lg">
+        <div class="ml-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mt-2"
+          >
+            <i class="fa-solid fa-screwdriver-wrench text-red-600 text-2xl"></i>
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="text-xl mt-0.5 mb-1.5 flex justify-center items-center">
+            En maintenance
+          </p>
+          <p class="flex justify-center text-xl mb-2.5" id="En-maintenance">
+            6
+          </p>
+        </div>
+      </article>
+      </div>
+      
+      
+      <!-- <section class="mt-1.5 grid grid-cols-1  sm:grid-cols-2  lg:grid-cols-2">
+        <div class="mb-3.5 mr-2.5 ml-2.5">
+          <img src="assets/images/French Car Analytics Dashboard (1).png" alt="">
+        </div>
+        <div class="mb-3.5 mr-2.5 ml-2.5">
+         <img src="assets/images/French Car Analytics Dashboard (2).png" alt="">
+        </div>
+      </section> -->
+
+      <!-- <section class="max-w-7xl">
+                  <table class=" bg-white rounded-md w-full mt-5 ml-10">
+            <caption class="sr-only">
+              Liste des voitures du parc et actions de gestion
+            </caption>
+            <thead class="">
+              <tr>
+                <th scope="col">Marque</th>
+                <th scope="col">Modèle</th>
+                <th scope="col">Immatriculation</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Prix / jour</th>
+                <th scope="col">Statut</th>
+              </tr>
+            </thead>
+            <tbody id="liste-voitures">
+
+            </tbody>
+          </table>
+      </section> -->
+      <section class="mx-6 mt-5 max-w-7xl rounded-2xl bg-white p-4 shadow-sm lg:mx-auto">
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse text-left">
+      <caption class="sr-only">
+        Liste des voitures du parc et actions de gestion
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Marque</th>
+          <th scope="col">Modèle</th>
+          <th scope="col">Immatriculation</th>
+          <th scope="col">Catégorie</th>
+          <th scope="col">Prix / jour</th>
+          <th scope="col">Statut</th>
+        </tr>
+      </thead>
+      <tbody id="liste-voitures"></tbody>
+    </table>
+  </div>
+</section>
+    </main>
+    <script type="module" src="js/scripte.js"></script>
+  </body>
+</html>
