@@ -1,8 +1,16 @@
 
+// import { voituresInitiales as donneesInitiales } from "./data.js";
+
+// let voituresInitiales = donneesInitiales.map((voiture) => ({ ...voiture }));
+
+
 import { voituresInitiales as donneesInitiales } from "./data.js";
 
-let voituresInitiales = donneesInitiales.map((voiture) => ({ ...voiture }));
+const voituresSauvegardees = localStorage.getItem("voitures");
 
+let voituresInitiales = voituresSauvegardees
+    ? JSON.parse(voituresSauvegardees)
+    : donneesInitiales.map((voiture) => ({ ...voiture }));
 
 let idModification = null;
 const tBody = document.getElementById("liste-voitures")
@@ -35,8 +43,10 @@ prixError.className = "field-error";
 const statusError  = document.getElementById("erreur-statut");
 statusError.className = "field-error";
 const vide = document.getElementById("etat-vide")
-
-
+// localStorage function
+function sauvegarderVoitures() {
+    localStorage.setItem("voitures", JSON.stringify(voituresInitiales));
+}
 
 
 // fonction afficher 
@@ -127,6 +137,8 @@ button2.addEventListener("click", (event) => {
         voituresInitiales = voituresInitiales.filter(
             (item) => item.id !== voiture.id
         )
+
+        sauvegarderVoitures();
         afficher(voituresInitiales)
         form.reset()
     }
@@ -249,7 +261,7 @@ if (idModification !== null){
     voituresInitiales.push(nouvell)
 }
 
-
+sauvegarderVoitures();
 afficher(voituresInitiales)
 form.reset()
 
@@ -302,5 +314,5 @@ btnReinitialiser.addEventListener("click",() => {
 
 afficher(voituresInitiales)
 })
-
+sauvegarderVoitures();
 afficher(voituresInitiales)
