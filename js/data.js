@@ -4,7 +4,7 @@ export const voituresInitiales = [
   {
     "id": 1,
     "marque": "Dacia",
-    "modele": "Sandero",
+    "modeles": "Sandero",
     "immatriculation": "AUTO-001",
     "categorie": "Citadine",
     "prixJour": 250,

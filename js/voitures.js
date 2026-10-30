@@ -91,7 +91,7 @@ const button1 = document.createElement("button")
 button1.type = "button";
 button1.className = "button button-edit"
 button1.textContent = "Modifier"
-button1.addEventListener("click",(event) => {
+button1.addEventListener("click",(event) => {   
     event.preventDefault()
     idModification = voiture.id;
     carBrand.value = voiture.marque;
@@ -103,7 +103,6 @@ button1.addEventListener("click",(event) => {
     button.textContent = "Modifier";
     annulation.removeAttribute("hidden")
 })
-
 // annuler modification
 annulation.addEventListener("click",() => {
 
