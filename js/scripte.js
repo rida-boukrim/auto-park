@@ -1,7 +1,17 @@
 
+// import { voituresInitiales as donneesInitiales } from "./data.js";
+
+
+// let voituresInitiales = donneesInitiales.map((voiture) => ({ ...voiture }));
 import { voituresInitiales as donneesInitiales } from "./data.js";
 
-let voituresInitiales = donneesInitiales.map((voiture) => ({ ...voiture }));
+const voituresSauvegardees = localStorage.getItem("voitures");
+
+const voituresInitiales = voituresSauvegardees
+    ? JSON.parse(voituresSauvegardees)
+    : donneesInitiales;
+
+
 const totalCars = document.getElementById("total")
 const carsDisponible = document.getElementById("disponible")
 const carsLouee = document.getElementById("louée")
