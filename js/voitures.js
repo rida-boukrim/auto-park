@@ -49,6 +49,7 @@ function sauvegarderVoitures() {
 }
 
 
+
 // fonction afficher 
 function afficher (voituresInitiales) {
 tBody.replaceChildren();

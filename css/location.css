@@ -1,0 +1,478 @@
+:root {
+  --page: #f4f6fa;
+  --surface: #ffffff;
+  --text: #18283b;
+  --muted: #627184;
+  --border: #dbe2eb;
+  --primary: #2855d7;
+  --primary-dark: #1e41a6;
+  --radius: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+      position: fixed;
+    width: 100%;
+}
+.container {
+  width: min(1240px, calc(100% - 64px));
+  margin: 0 auto;
+}
+.header-content {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin-left: -13px;
+}
+.divmenue {
+    background-color: white;
+    width: 50%;
+    position: fixed;
+    height: 100%;
+    top: 89px;
+
+}
+.divmenue a {
+    display: block;
+  padding: 11px 17px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+.divmenue a:hover{
+      background: #ecf1ff;
+  color: #2449b5;
+}
+.menu {
+        margin-right: -21px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-size: 28px;
+}
+.brand-mark span {
+  color: #c4d2ff;
+}
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2.3px;
+}
+nav {
+  display: flex;
+  gap: 8px;
+}
+nav {
+    display: none;
+}
+nav a {
+  padding: 11px 17px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+nav a:hover {
+  background: #f2f5fb;
+  color: var(--text);
+}
+nav a[aria-current="page"] {
+  background: #ecf1ff;
+  color: #2449b5;
+}
+
+.agency-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+.agency-label {
+    display: none;
+}
+.main-content {
+  padding-top: 38px;
+  padding-bottom: 30px;
+}
+
+.page-intro {
+  margin-bottom: 28px;
+  margin-left: 16px;
+}
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+#titre-page {
+    font-size: 24px;
+}
+
+.etaps {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 4px;
+    padding: 15px 20px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    gap: 1px;
+    margin-bottom: 20px;
+}
+
+.etape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.etape p {
+    background-color: #f4f6fa;
+    color: #627184;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    font-weight: 700;
+}
+
+.etape .description {
+    font-size: 10px;
+    color: #627184;
+}
+
+.etape.active p {
+    background-color: var(--primary);
+    color: white;
+}
+
+.etape.active .description {
+    color: var(--primary);
+    font-weight: 700;
+}
+main .secondSection {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    margin-inline: 5px;
+    padding-inline: 6px;
+}
+main .paraContainer {
+    margin-left: 12px;
+}
+.paraContainer .vehicule {
+       padding-top: 10px;
+       font-size: 11px;
+       font-weight: 700;
+       color: blue;
+}
+.paraContainer .choisir {
+    color: #192B3F;
+    font-size: 21px;
+    font-weight: 700;
+}
+.paraContainer .lastPragraph {
+    color: #697C94;
+    font-size: 14px;
+    font-weight: 400;
+        margin-top: -8px;
+}
+main article {
+    border: 1px solid #D8E1EF;
+    margin-inline: 8px;
+    border-radius: 21px;
+    margin-bottom: 15px;
+
+}
+main article p {
+    margin-left: 16px;
+    margin-top: 6px;
+}
+main article .flexible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.radio {
+    margin-right: 25px;
+        width: 24px;
+    height: 32px;
+    margin-top: 10px;
+
+}
+main article  .modelle {
+    color: #2852E3;
+    font-weight: 700;
+    font-size: 11px;
+    background-color: #EEF2FF;
+    height: 10px;
+    margin-top: 18px;
+    padding-inline: 25px;
+    padding-top: 18px;
+    padding-bottom: 17px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+main article .carBrand {
+    font-size: 16px;
+    font-weight: 700;
+    color: #192B3F;
+}
+main article .carStatu {
+    color: #16835C;
+    font-size: 12px;
+    font-weight: 400;
+}
+main article .carPrix {
+    color: #2852E3;
+    font-weight: 700;
+    font-size: 16px;
+}
+main hr {
+   margin-inline: 6px;
+}
+main form .formCaption {
+    
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: 9px;
+}
+main form  label {
+    display: block;
+    color: #192B3F;
+    font-size: 14px;
+    font-weight: 500;
+     margin-left: 9px;
+     margin-bottom: 5px;
+     margin-top: 9px;
+
+}
+main form input {
+   margin-left: 10px;
+    padding: 10px;
+    width: 93%;
+    border: 1px solid #D8E1EF;
+    border-radius: 8px;
+}
+main .secondSection .duree {
+    background-color:#EEF2FF ;
+    color:#2852E3 ;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 14px;
+    margin-inline: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+main .secondSection .button1 {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #192B3F;
+    margin-right: 10px;
+    border: 1px solid #D8E1EF;
+        border-radius: 8px;
+            margin-top: 10px;
+                margin-bottom: 17px;
+                background-color: white;
+   
+}
+main .secondSection .deuxBotton {
+    margin-left: 18px;
+}
+main .secondSection .button2 {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-inline: 37px;
+        margin-left: 10px;
+            border: 1px solid #D8E1EF;
+    border-radius: 8px;
+    color: white;
+    background-color: blue;
+        margin-top: 10px;
+            margin-bottom: 17px;
+}
+main .thirdSection {
+    margin-top: 10px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    margin-inline: 5px;
+    border: 1px solid gray;
+    border-radius: 13px;
+
+}
+
+main .thirdSection .firstP {
+    color: #2852E3;
+    font-size: 11px;
+    font-weight: 700;
+        margin-top: 17px;
+    margin-left: 18px;
+}
+main .thirdSection .secondP {
+    color: #192B3F;
+    font-size: 22px;
+    font-weight: 700;
+        margin-left: 18px;
+}
+main .thirdSection .thirdP {
+    color: #697C94;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 18px;
+}
+main .thirdSection hr {
+    margin-inline: 18px;
+}
+main .thirdSection .dateDexpiration {
+    color: #192B3F;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 18px;
+}
+main .thirdSection .jours {
+    color: #697C94;
+    font-size: 12;
+    font-weight: 400;
+    margin-left: 18px;
+}
+main .thirdSection .calculPrixDeLocation {
+    display: flex;
+    justify-content: space-between;
+}
+main .thirdSection .prixApartir-deree {
+    color: #697C94;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 18px;
+}
+main .thirdSection .claculPrix {
+    color: #192B3F;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 8px;
+
+}
+main .thirdSection .containerre{
+        display: flex;
+    justify-content: space-between;
+}
+main .thirdSection .recuperation {
+        color: #697C94;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 18px;
+}
+main .thirdSection .garatuit {
+        color: #192B3F;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+main .thirdSection .containerEstime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .thirdSection .total-estime {
+    color: #192B3F;
+    font-size:14px ;
+    font-weight: 700;
+    margin-left: 18px;
+}
+main .thirdSection .prixEstime {
+    font-size: 23px;
+    font-weight: 700;
+    color: #2852E3;
+        margin-right: 8px;
+    margin-top: 7px;
+}
+main .thirdSection .NB {
+    margin-left: 18px;
+    font-size: 12px;
+    color: #697C94;
+    font-weight: 400;
+}
+main .thirdSection .NB2 {
+    margin-left: 18px;
+    font-size: 12px;
+    color: #697C94;
+    font-weight: 400;
+    background-color: #F4F6FA;
+    padding: 12px;
+    width: 88%;
+    border-radius: 8px;
+    margin-bottom: 18px;
+
+}
+footer p {
+        color: #697C94;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.allCars .check-button {
+        margin-left: 14px;
+    width: 24px;
+    height: 32px;
+    margin-top: 10px;
+}
