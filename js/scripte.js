@@ -12,6 +12,8 @@ const voituresInitiales = voituresSauvegardees
     : donneesInitiales;
 
 
+    
+
 const totalCars = document.getElementById("total")
 const carsDisponible = document.getElementById("disponible")
 const carsLouee = document.getElementById("louée")
