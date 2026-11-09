@@ -20,6 +20,9 @@ const prixDesJours = document.querySelector(".prixApartir-deree")
 const calculPrix = document.querySelector(".claculPrix")
 const prixtotal = document.querySelector(".prixEstime")
 const detedexpiration = document.querySelector(".dateDexpiration")
+const stepOne = document.querySelector(".deuxSection")
+const stepTwo = document.querySelector(".step-2")
+const agence = document.querySelector(".agency")
 
 
   const configuration = {
@@ -103,16 +106,18 @@ function verefierDate () {
 
 debutErreur.textContent = ""
 finErreur.textContent = ""
-
+let valid = true
 
 if(dateDebut.value === ""){
   debutErreur.textContent = "champe required"
+valid = false
 }
 
 if(dateFin.value == "" ){
   finErreur.textContent = "champe required"
+  valid = false
 }
-
+return valid
 
 
 
@@ -120,8 +125,10 @@ if(dateFin.value == "" ){
 
 }
 btnsuivant.addEventListener("click", () => {
+  if(!verefierDate()) return
+  stepOne.setAttribute("hidden","")
+  stepTwo.removeAttribute("hidden")
 
-  verefierDate()
 })
 
 function calculerJours() {
