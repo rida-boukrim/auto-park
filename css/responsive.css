@@ -62,5 +62,23 @@
     margin-right: 15%;
 }
 
+main .step-2 .threeOption {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+main .step-2 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+
+}
+main .step-2 .thirdSection {
+    margin-top: 8px;
+}
+
+/* [hidden] {
+  display: none !important;
+} */
+
 
 }

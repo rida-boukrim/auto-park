@@ -333,7 +333,7 @@ main .secondSection .button1 {
    
 }
 main .secondSection .deuxBotton {
-    margin-left: 18px;
+    margin-left: 10px;
 }
 main .secondSection .button2 {
     padding: 10px;
@@ -476,3 +476,120 @@ footer p {
     height: 32px;
     margin-top: 10px;
 }
+/* main .step-2 {
+    background-color: white;
+        border: 1px solid gray;
+    border-radius: 13px;
+    margin-top: 8px;
+    margin-inline: 4px;
+
+} */
+main .step-2 .step-title {
+        padding-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #2852E3;
+}
+main .step-2 .recuperationn .mini-title {
+    margin-left: 13px;
+
+}
+main .step-2 .recuperationn .carChoisir {
+    font-size: 21px;
+    font-weight: 700;
+    color: #192B3F;
+        margin-left: 12px;
+}
+
+main .step-2 .recuperationn .lieuChoisir {
+    font-size: 14px;
+    font-weight: 400;
+    color: #697C94;
+
+}
+main .step-2 .recuperationn .carAdrresse{
+    font-size: 15px;
+    font-weight: 700;
+
+}
+main .step-2 .recuperationn .servicePrix {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2852E3;
+}
+main .step-2 .recuperationn .input-step2 {
+    margin-left: 16px;
+}
+
+
+main .step-2 .recuperationn .Informations-de-récupération {
+    font-size: 17px ;
+    font-weight: 700;
+    color: #192B3F;
+    margin-left: 13px;
+}
+
+main .step-2 .recuperationn label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #192B3F;
+    margin-left: 13px;
+    margin-bottom: 4px;
+}
+main .step-2 .recuperationn .heur-input {
+    width:95%;
+    margin-inline:8px;
+    padding: 10px;
+    border: 1px solid #D8E1EF;
+    border-radius: 8px;
+    outline: none;
+}
+main .step-2 .recuperationn .supplement {
+        background-color: #EEF2FF;
+    color: #2852E3;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 14px;
+    margin-inline: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+main .step-2 .recuperationn .button1 {
+        padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #192B3F;
+    margin-right: 10px;
+    border: 1px solid #D8E1EF;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 17px;
+    background-color: white;
+}
+main .step-2 .recuperationn .button2 {
+        padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-inline: 37px;
+    margin-left: 10px;
+    border: 1px solid #D8E1EF;
+    border-radius: 8px;
+    color: white;
+    background-color: blue;
+    margin-top: 10px;
+    margin-bottom: 17px;
+}
+main .step-2 .recuperationn .deuxBotton {
+    margin-left: 16px;
+}
+main .step-2 .recuperationn {
+        background-color: white;
+        border: 1px solid gray;
+    border-radius: 13px;
+    margin-top: 8px;
+    margin-inline: 4px;
+}
+
